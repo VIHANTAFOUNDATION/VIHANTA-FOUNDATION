@@ -1,39 +1,45 @@
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
-import "./App.css"; 
+import "./App.css";
 
 function App() {
+  // References for scroll-to navigation sections
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const blogRef = useRef(null);
   const contactRef = useRef(null);
 
+  // Hamburger menu logic for mobile/compact navbar
+  // Using DOMContentLoaded event - runs once on page load
   document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector("nav ul");
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector("nav ul");
 
-  if (hamburger && navMenu) {
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
-    });
-  }
-});
+    if (hamburger && navMenu) {
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+    }
+  });
 
-
+  // Function to smoothly scroll to target section when nav item clicked
   const scrollTo = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
+
+  // Reference to the contact form for EmailJS submission
   const formRef = useRef();
 
+  // EmailJS send email handler
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "default_service", // Using your default Gmail service
-        "template_bqxm1mf", // Replace with your actual Template ID
+        "default_service", // Default Gmail service
+        "template_bqxm1mf", // Your EmailJS Template ID
         formRef.current,
-        "aUlX7d5Bbv0KdOBra" // Replace with your EmailJS Public Key
+        "aUlX7d5Bbv0KdOBra" // Your EmailJS Public Key
       )
       .then(
         (result) => {
@@ -49,18 +55,12 @@ function App() {
 
   return (
     <>
+      {/* Navbar */}
       <header className="navbar">
         <div className="logo">
-          <img className="VF" src="../src/assets/VF1.png" alt="" /> VIHANTA
-          FOUNDATION
+          <img className="VF" src="../src/assets/VF1.png" alt="" />
+          VIHANTA FOUNDATION
         </div>
-
-{/* <div className="logo-title">
-  <img className="VF" src="../src/assets/VF1.png" alt="Vihanta Foundation logo" />
-  <span className="logo">VIHANTA FOUNDATION</span>
-</div> */}
-
-
         <nav>
           <ul>
             <li onClick={() => scrollTo(homeRef)}>Home</li>
@@ -72,16 +72,15 @@ function App() {
         </nav>
       </header>
 
+      {/* Home Section */}
       <section className="section home" ref={homeRef}>
         <h1>Welcome to Vihanta Foundation</h1>
         <p>
-          
           <i>Are You from Business Fraternity ?</i> <br />
           One of its kind, first time for well established mind of self
           dependend which can help India grow exponentially to make every Indian
           Proud.
         </p>
-        {/* <button className="cta-btn">WHY WE ?</button> */}
         <h1>WHY WE ?</h1>
         <br />
         <br />
@@ -93,11 +92,9 @@ function App() {
           only through your profession, we are waiting for you to approach us.
           We are there with you to achieve that.
         </p>
-        {/* <button className="cta-btn" > */}
         <a className="cta-btn1" href="https://forms.gle/1GMyDmCBVDTX7yV77">
           Tell Me About You
         </a>
-        {/* </button> */}
         <a
           className="cta-btn2"
           href="https://ngodonation-e91d7.web.app/main-booking?id=EGQcPoHZmiddJR7D7qhxSa6kL3r2"
@@ -113,6 +110,7 @@ function App() {
         <p>Scan Me </p>
       </section>
 
+      {/* About Section */}
       <section className="section about" ref={aboutRef}>
         <h2>About Us</h2>
         <p>
@@ -158,7 +156,6 @@ function App() {
           </div>
           <div className="about-card">
             <h3>Our Vision</h3>
-            {/* <p>Help the nation self Empowering the life journey everyday</p> */}
             <p>
               To Empower the self dependent community touch the height of
               success and to be celebrated by millions of like minded group
@@ -168,18 +165,17 @@ function App() {
         </div>
       </section>
 
+      {/* Projects Section */}
       <section className="section blog" ref={blogRef}>
         <b>
           <h2>Our Projects</h2>
         </b>
         <div className="blog-posts">
           <div className="blog-card moment1">
-            {/* ----------------1---------------------- */}
             <img className="oneMoment" src="../src/assets/1Moment.png" alt="not able to load image" />
-            {/* <h4>1MOMENT</h4>  */}
             <b>
               <span>September 2025</span>
-            </b> 
+            </b>
             <p>
               Do you think you want to share about the trouble in clearing a
               transaction with anyone in past. Take 1 moment & share with us.{" "}
@@ -190,10 +186,8 @@ function App() {
             </p>
           </div>
 
-          {/* ----------------------------2--------------------------------- */}
           <div className="blog-card">
             <img className="Empower" src="../src/assets/Empower.png" alt="" />
-            {/* <h4>EMPOWER!</h4> */}
             <b>
               <span>September 2025</span>
             </b>
@@ -205,16 +199,12 @@ function App() {
             </p>
           </div>
 
-          {/* ----------------------------3--------------------------------- */}
           <div className="blog-card">
             <img
               className="INDUSTRIP"
               src="../src/assets/INDUSTRIP.png"
               alt=""
             />
-
-            {/* <h4>INDUSTRIP</h4> */}
-
             <b>
               <span>September 2025</span>
             </b>
@@ -226,14 +216,12 @@ function App() {
               to learn about its developing process.
             </p>
           </div>
-          {/* ---------------------------------4------------------------------ */}
           <div className="blog-card">
             <img
               className="INDUSTRIP"
               src="../src/assets/ALLIANCEPATH.png"
               alt=""
             />
-            {/* <h4>ALLIANCEPATH</h4> */}
             <b>
               <span>September 2025</span>
             </b>
@@ -245,11 +233,8 @@ function App() {
               trust upon.
             </p>
           </div>
-
-          {/* ------------------------------------5--------------------------- */}
           <div className="blog-card">
             <img className="BCOLLAB" src="../src/assets/BCOLLAB.png" alt="" />
-            {/* <h4>BCOLLAB</h4> */}
             <b>
               <span>September 2025</span>
             </b>
@@ -262,10 +247,8 @@ function App() {
             </p>
           </div>
 
-          {/* ---------------------------------6-------------------------------- */}
           <div className="blog-card">
             <img className="WOM" src="../src/assets/WOM.png" alt="" />
-            {/* <h4>WOMS</h4> */}
             <b>
               <span>September 2025</span>
             </b>
@@ -277,11 +260,8 @@ function App() {
             </p>
           </div>
 
-          {/* -----------------------------7-------------------------- */}
-
           <div className="blog-card">
             <img className="BIZWOMEN" src="../src/assets/BIZWOMEN.png" alt="" />
-            {/* <h4>BIZWOMEN</h4> */}
             <b>
               <span>September 2025</span>
             </b>
@@ -293,9 +273,7 @@ function App() {
             </p>
           </div>
 
-          {/* --------------------------------8------------------------------- */}
           <div className="blog-card">
-            {/* <h4>CULTURALEDU</h4> */}
             <img className="CULTUREDU" src="../src/assets/CULTUREDU.png" alt="" />
             <b>
               <span>September 2025</span>
@@ -309,10 +287,8 @@ function App() {
             </p>
           </div>
 
-          {/* ----------------------------------9------------------------------- */}
           <div className="blog-card">
             <img className="BCREATIVE" src="../src/assets/BCREATIVE.png" alt="" />
-            {/* <h4>BCREATIVE</h4> */}
             <b>
               <span>September 2025</span>
             </b>
@@ -325,10 +301,8 @@ function App() {
             </p>
           </div>
 
-          {/* --------------------------10----------------------------- */}
           <div className="blog-card">
             <img className="RELIVEB" src="../src/assets/RELIVEB.png" alt="" />
-            {/* <h4>RELIVEB</h4> */}
             <b>
               <span>September 2025</span>
             </b>
@@ -343,12 +317,12 @@ function App() {
         </div>
       </section>
 
+      {/* Contact Section with form */}
       <section className="section contact" ref={contactRef}>
         <h2>Contact Us</h2>
         <form
           className="contact-form"
           autoComplete="off"
-          // onSubmit={(e) => e.preventDefault()}
           ref={formRef}
           onSubmit={sendEmail}
         >
@@ -363,6 +337,7 @@ function App() {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="footer">
         <p>
           © {new Date().getFullYear()} Vihanta Foundation. All Rights Reserved.

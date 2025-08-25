@@ -457,7 +457,7 @@ nav li:active {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 1.28rem 1rem;
-    width: 390px;
+    width: 500px;
     min-height: 145px;
     display: flex;
     flex-direction: column;
@@ -753,8 +753,10 @@ nav li:active {
 }
 
 .moment1 {
-  width: 100%;          /* Let it be responsive */
-  max-width: 1600px;     }
+    width: 100%;
+    /* Let it be responsive */
+    max-width: 1600px;
+}
 
 .BCOLLAB {
     width: 200px;
@@ -1248,7 +1250,6 @@ nav ul li a:hover {
             display: flex !important;
             flex-direction: row !important;
             gap: 8px !important;
-
             justify-content: center !important;
             width: 100% !important;
             min-width: unset !important;
@@ -1316,6 +1317,21 @@ nav ul li a:hover {
             white-space: nowrap;
             padding: 4px 2px !important;
             /* aur kam padding */
+        }
+
+        .Empower,
+        .INDUSTRIP,
+        .ALLIANCEPATH,
+        .BCOLLAB,
+        .WOM,
+        .BIZWOMEN,
+        .CULTUREDU,
+        .BCREATIVE,
+        .RELIVEB {
+            width: 80%;
+            max-width: 20px;
+            margin: 0 auto !important;
+            display: block;
         }
     }
 }
