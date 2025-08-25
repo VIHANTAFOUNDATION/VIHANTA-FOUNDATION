@@ -457,7 +457,7 @@ nav li:active {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 1.28rem 1rem;
-    width: 500px;
+    width: 400px;
     min-height: 145px;
     display: flex;
     flex-direction: column;
