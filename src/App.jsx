@@ -2,6 +2,20 @@ import React, { useRef } from "react";
 import emailjs from "emailjs-com";
 import "./App.css";
 
+import VF1 from "./assets/VF1.png";
+import Scanner from "./assets/Scanner.jpg";
+import OneMoment from "./assets/1Moment.png";
+import Empower from "./assets/Empower.png";
+import INDUSTRIP from "./assets/INDUSTRIP.png";
+import ALLIANCEPATH from "./assets/ALLIANCEPATH.png";
+import BCOLLAB from "./assets/BCOLLAB.png";
+import WOM from "./assets/WOM.png";
+import BIZWOMEN from "./assets/BIZWOMEN.png";
+import CULTUREDU from "./assets/CULTUREDU.png";
+import BCREATIVE from "./assets/BCREATIVE.png";
+import RELIVEB from "./assets/RELIVEB.png";
+
+
 function App() {
   // References for scroll-to navigation sections
   const homeRef = useRef(null);
@@ -58,7 +72,7 @@ function App() {
       {/* Navbar */}
       <header className="navbar">
         <div className="logo">
-          <img className="VF" src="/src/assets/VF1.png" alt="" />
+          <img className="VF" src={VF1} alt="" />
           VIHANTA FOUNDATION
         </div>
         <nav>
@@ -104,7 +118,7 @@ function App() {
         <br /> <br /> <br />
         <img
           className="scanner"
-          src="/src/assets/Scanner.jpg"
+          src={Scanner}
           alt="scan me "
         />
         <p>Scan Me </p>
@@ -172,7 +186,7 @@ function App() {
         </b>
         <div className="blog-posts">
           <div className="blog-card moment1">
-            <img className="oneMoment" src="/src/assets/1Moment.png" alt="not able to load image" />
+            <img className="oneMoment" src={OneMoment} alt="not able to load image" />
             <b>
               <span>September 2025</span>
             </b>
@@ -187,7 +201,7 @@ function App() {
           </div>
 
           <div className="blog-card">
-            <img className="Empower" src="/src/assets/Empower.png" alt="" />
+            <img className="Empower" src={Empower} alt="" />
             <b>
               <span>September 2025</span>
             </b>
@@ -202,7 +216,7 @@ function App() {
           <div className="blog-card">
             <img
               className="INDUSTRIP"
-              src="/src/assets/INDUSTRIP.png"
+              src={INDUSTRIP}
               alt=""
             />
             <b>
@@ -219,7 +233,7 @@ function App() {
           <div className="blog-card">
             <img
               className="INDUSTRIP"
-              src="/src/assets/ALLIANCEPATH.png"
+              src={ALLIANCEPATH}
               alt=""
             />
             <b>
@@ -234,7 +248,7 @@ function App() {
             </p>
           </div>
           <div className="blog-card">
-            <img className="BCOLLAB" src="/src/assets/BCOLLAB.png" alt="" />
+            <img className="BCOLLAB" src={BCOLLAB} alt="" />
             <b>
               <span>September 2025</span>
             </b>
@@ -248,7 +262,7 @@ function App() {
           </div>
 
           <div className="blog-card">
-            <img className="WOM" src="/src/assets/WOM.png" alt="" />
+            <img className="WOM" src={WOM} alt="" />
             <b>
               <span>September 2025</span>
             </b>
@@ -261,7 +275,7 @@ function App() {
           </div>
 
           <div className="blog-card">
-            <img className="BIZWOMEN" src="/src/assets/BIZWOMEN.png" alt="" />
+            <img className="BIZWOMEN" src={BIZWOMEN} alt="" />
             <b>
               <span>September 2025</span>
             </b>
@@ -274,7 +288,7 @@ function App() {
           </div>
 
           <div className="blog-card">
-            <img className="CULTUREDU" src="/src/assets/CULTUREDU.png" alt="" />
+            <img className="CULTUREDU" src={CULTUREDU} alt="" />
             <b>
               <span>September 2025</span>
             </b>
@@ -288,7 +302,7 @@ function App() {
           </div>
 
           <div className="blog-card">
-            <img className="BCREATIVE" src="/src/assets/BCREATIVE.png" alt="" />
+            <img className="BCREATIVE" src={BCREATIVE} alt="" />
             <b>
               <span>September 2025</span>
             </b>
@@ -302,7 +316,7 @@ function App() {
           </div>
 
           <div className="blog-card">
-            <img className="RELIVEB" src="/src/assets/RELIVEB.png" alt="" />
+            <img className="RELIVEB" src={RELIVEB} alt="" />
             <b>
               <span>September 2025</span>
             </b>
