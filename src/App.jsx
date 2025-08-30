@@ -165,7 +165,7 @@ function App() {
               hard, harder, even Hardest & tasted the success bit by bit,
               everything eventually started falling in his favor due to his
               respect for the godfather and his attention and hard work towards work.
-              All of a sudden he faces much bigger problem but the destiny has
+              All of a sudden, he faces much bigger problem but the destiny has
               decided that ram could handle this monster issue alone. Ram
               successfully did the same, now Problems are like a piece of cake for RAM &
               he is enjoying the success every second of his life with
@@ -239,7 +239,7 @@ function App() {
             </b>
             <p>
               For us creating no Competition is like creating no challenge or
-              Fear of failure, Any way it fails! For Sustainable Market synergy
+              Fear of failure, any way it fails! For Sustainable Market synergy
               we share an opportunity to learn about any product by visiting to
               its origin or root place. Come and reach to farmers with an idea
               to learn about its developing process.
@@ -256,7 +256,7 @@ function App() {
             </b>
             <p>
               ALLIANCEPATH All you need is to tie up with the right energetic
-              organisation for all your project extension, Who will be seriously
+              organization for all your project extension, Who will be seriously
               taking interest on your growth path and making it enjoyable
               journey. We provide here all Trusted and tested connection you can
               trust upon.
@@ -268,7 +268,7 @@ function App() {
               <span>September 2025</span>
             </b>
             <p>
-              Generally trust is misunderstood by if you can trust someone but
+              Generally, trust is misunderstood by if you can trust someone but
               actually it is other way round correct that if someone trust you
               is called truly trust. Here you can check about any business
               individual's profile before you trust him and we achieve that
