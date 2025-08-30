@@ -1335,3 +1335,62 @@ nav ul li a:hover {
         }
     }
 }
+
+
+.button-text-row {
+    display: flex;
+    justify-content: center;
+    /* centers row */
+    gap: 105px;
+    /* space between columns */
+    margin-left: 100px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.column p{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.span{
+     font-size: 15px;
+    font-weight: 500;
+}
+
+.custom-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    background: linear-gradient(to right, #ffda77, #00c6ff);
+    color: #000;
+    font-weight: 600;
+    transition: 0.3s ease;
+    margin-bottom: 8px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    /* Smooth animation */
+
+}
+
+.custom-btn:hover {
+    transform: scale(1.05);
+}
+
+/* 📱 Mobile view (max width 768px) */
+@media (max-width: 768px) { 
+    .button-text-row {
+        display: flex;         /* ensure it's flex */
+        flex-direction: column; /* stack vertically */
+        gap: 10px;              /* spacing between items */
+        margin-left: 10px;      /* adjust spacing from left */
+    }
+}

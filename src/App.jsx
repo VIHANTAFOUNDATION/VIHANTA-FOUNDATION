@@ -104,24 +104,44 @@ function App() {
           If you feel you have some charismatic power to make your life better
           but don't know what is missing & you believe that it can be achieved
           only through your profession, we are waiting for you to approach us.
-          We are there with you to achieve that.
+           We are there with you to achieve that.
         </p>
-        <a className="cta-btn1" href="https://forms.gle/1GMyDmCBVDTX7yV77">
+{/*         
+        <p><a className="cta-btn1" href="https://forms.gle/1GMyDmCBVDTX7yV77">
           Tell Me About You
-        </a>
+        </a> <br />
+        ( Click Here to Become Foundation Member)</p>
+
         <a
           className="cta-btn2"
           href="https://ngodonation-e91d7.web.app/main-booking?id=EGQcPoHZmiddJR7D7qhxSa6kL3r2"
-        >
+          >
           Help in our Vision
         </a>
+        <p>
+        ( Click here to Explore All our Projects Gallery and Join as Volenteer/Donate)
+        </p>  */}
+
+        <div className="button-text-row">
+  <div className="column">
+    <a className="custom-btn" href="https://forms.gle/1GMyDmCBVDTX7yV77">👉Tell Me About You</a>
+    <p>( Click Here to Become Foundation Member )</p>
+  </div>
+  <div className="column">
+    <a className="custom-btn" href="https://ngodonation-e91d7.web.app/main-booking?id=EGQcPoHZmiddJR7D7qhxSa6kL3r2">👉Help in our Vision</a>
+    <p>( Click here to Explore All our Projects Gallery and Join as volunteer/Donate )</p>
+  </div>
+</div>
+
         <br /> <br /> <br />
         <img
           className="scanner"
           src={Scanner}
           alt="scan me "
         />
-        <p>Scan Me </p>
+        <p>Scan Me <br /> <span className="span">(Take a screenshot and upload it on Google Lens)</span>
+ </p>
+        
       </section>
 
       {/* About Section */}
@@ -136,18 +156,18 @@ function App() {
           <div className="about-card">
             <h3>The Story</h3>
             <p>
-              Imagine MR. RAM, who has a dream like you to have his family,
+              Imagine MR. Ram, who has a dream like you to have his family,
               society celebrate your nationwide success as soon as possible but
               waiting for the right person to support him. One day he met
-              someone like that & the challenge was to gain trust of such
+              someone like that & the challenge was to gain the trust of such
               godfather. Ram could manage to sustain the relation with him and
-              continues the learning & working journey together. Ram worked
-              hard, harder even Hardest & tasted the success bit by bit,
+              continued  the learning & working journey together. Ram worked
+              hard, harder, even Hardest & tasted the success bit by bit,
               everything eventually started falling in his favor due to his
-              respect to godfather and his attention and hard work towards work.
-              All of sudden he faces much bigger problem but the destiny has
+              respect for the godfather and his attention and hard work towards work.
+              All of a sudden he faces much bigger problem but the destiny has
               decided that ram could handle this monster issue alone. Ram
-              successfully did the same, now Problems are like a cake for RAM &
+              successfully did the same, now Problems are like a piece of cake for RAM &
               he is enjoying the success every second of his life with
               happiness. The nationwide celebration looks closer.
             </p>
@@ -155,7 +175,7 @@ function App() {
           <div className="about-card">
             <h3>The Founding Mind</h3>
             <p className="Mind">
-              MR. Rahim started his journey by taking his all personal and
+              Mr. Rahim started his journey by making his all personal and
               profession decision by himself only with an idea to become big.
               None other than Rahim wants him to earn big & become powerful.{" "}
               <br />
@@ -192,11 +212,9 @@ function App() {
             </b>
             <p>
               Do you think you want to share about the trouble in clearing a
-              transaction with anyone in past. Take 1 moment & share with us.{" "}
+              transaction with anyone in past. Take 1moment & share with us.{" "}
               <br />
-              Our heartfelt intention is to take you out of that trouble
-              absolutely without any cost only by understanding your problem &
-              subject better be the part of 1Moment.
+              Our heartfelt intention is to help you out of that trouble, completely free of cost, simply by understanding your problem and subject better as part of 1Moment.
             </p>
           </div>
 
@@ -206,10 +224,7 @@ function App() {
               <span>September 2025</span>
             </b>
             <p>
-              EMPOWER Giving first is the way to get most! We know somewhere
-              every human is powerful and has a special quality which can help
-              the others which is of high importance. Let's come forward and
-              change the Nation by your strength. We welcome you.
+              Giving first is the way to gain the most! We believe every person has unique power and special qualities that can make a difference. Let’s come forward and use our strength to change the nation together. We welcome you.
             </p>
           </div>
 
@@ -241,7 +256,7 @@ function App() {
             </b>
             <p>
               ALLIANCEPATH All you need is to tie up with the right energetic
-              organisation for all your project extention, Who will be seriously
+              organisation for all your project extension, Who will be seriously
               taking interest on your growth path and making it enjoyable
               journey. We provide here all Trusted and tested connection you can
               trust upon.
@@ -256,7 +271,7 @@ function App() {
               Generally trust is misunderstood by if you can trust someone but
               actually it is other way round correct that if someone trust you
               is called truly trust. Here you can check about any business
-              individual's profile to before you trust him and we achive that
+              individual's profile before you trust him and we achieve that
               given our in-house network across India.
             </p>
           </div>
@@ -280,7 +295,7 @@ function App() {
               <span>September 2025</span>
             </b>
             <p>
-              We Believe that business women is double powered as the beauty of
+              We Believe that businesswoman is double powered as the beauty of
               making money apart from inherent beauty never fades! There is
               nothing like being self dependent for women. We support this as a
               culture to all business family.
@@ -307,7 +322,7 @@ function App() {
               <span>September 2025</span>
             </b>
             <p>
-              BCREATIIVE Add Wings here to your Idea just by sharing the same.
+              BCREATIVE Add Wings here to your Idea just by sharing the same.
               Our intention about you fly full on will give you way to support
               your project unbiased. You require someone along the way to walk
               the path without money motives. Pure Satisfaction in seeing your
@@ -324,7 +339,7 @@ function App() {
               Every Project that any dreamer Start has the potential to touch
               the sky but something was not matching/right/fit at that moment so
               she/he moves to explore new one. Let's Figure out the Missed
-              Something and Jurk starts to Relive that Project. This time all
+              Something and Jerk starts to revive that Project. This time all
               will be right. We are with you.
             </p>
           </div>
