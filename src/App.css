@@ -166,7 +166,6 @@ nav li:active {
 .home {
     text-align: center;
     background: #2155cd;
-    /* Pure blue, no gradient or animation */
     border-radius: 0 0 50px 50px;
     box-shadow: 0 16px 68px rgba(33, 85, 205, 0.10);
     position: relative;
@@ -345,7 +344,6 @@ nav li:active {
     justify-content: center;
     align-items: stretch;
     gap: 2rem;
-    /* width: 100rem; */
     max-width: 1100px;
     margin: 0 auto;
     margin-top: 1.45rem;
@@ -461,7 +459,6 @@ nav li:active {
     min-height: 145px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     transition: box-shadow 0.17s, transform 0.17s, border 0.17s;
     border-left: 7px solid var(--primary);
     position: relative;
@@ -735,12 +732,8 @@ nav li:active {
 }
 
 .oneMoment {
-    /* height: 150px; */
     width: 100%;
     max-width: 250px;
-    /* margin-top: -40px; */
-    /* margin-left: 650px; */
-    /* margin-bottom: -40px; */
     margin: 0 auto;
     display: block;
 }
@@ -804,9 +797,6 @@ nav li:active {
     font-size: 10rem;
 }
 
-/* ===========================
-   EXTRA RESPONSIVE FIXES
-   =========================== */
 
 /* Tablet & small laptops */
 @media (max-width: 1024px) {
@@ -932,7 +922,7 @@ nav li:active {
         font-size: 3rem;
     }
 
-    /* Fix image scaling */
+
     img {
         max-width: 100%;
         height: auto;
@@ -952,11 +942,6 @@ nav li:active {
     z-index: 1000;
 }
 
-/* .logo { */
-/* font-size: 1.8rem; */
-/* font-weight: bold; */
-/* color: #222; */
-/* } */
 
 nav ul {
     display: flex;
@@ -990,7 +975,7 @@ nav ul li a:hover {
     border-radius: 3px;
 }
 
-/* HERO FIXES */
+
 .home {
     padding: 3rem 1.5rem;
     text-align: center;
@@ -999,13 +984,6 @@ nav ul li a:hover {
 .home h1 {
     font-size: 2.5rem;
 }
-
-/* .home p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-top: 1rem;
-  line-height: 1.6rem;
-} */
 
 /* RESPONSIVENESS */
 
@@ -1262,7 +1240,6 @@ nav ul li a:hover {
             font-size: 1rem !important;
             white-space: nowrap;
             padding: 6px 2px !important;
-            /* Padding kam ki */
         }
     }
 
@@ -1271,10 +1248,9 @@ nav ul li a:hover {
         .logo img,
         .VF {
             height: 50px !important;
-            /* Pehle se bada */
             width: auto !important;
-            margin-left: 0 !important;
-            margin-bottom: 0 !important;
+            margin-left: 1px !important;
+            margin-bottom: 10px !important;
             display: block;
         }
     }
@@ -1301,22 +1277,19 @@ nav ul li a:hover {
             display: flex !important;
             flex-direction: row !important;
             gap: 4px !important;
-            /* aur kam gap */
             justify-content: center !important;
             width: 100% !important;
             min-width: unset !important;
             overflow-x: unset !important;
-            /* Scrollbar remove */
             padding: 0 !important;
             margin: 0 !important;
         }
 
         nav li {
-            font-size: 0.98rem !important;
-            /* Slightly chhota text */
+            font-size: 0.80rem !important;
             white-space: nowrap;
             padding: 4px 2px !important;
-            /* aur kam padding */
+            font-weight: bolder;
         }
 
         .Empower,
@@ -1340,9 +1313,7 @@ nav ul li a:hover {
 .button-text-row {
     display: flex;
     justify-content: center;
-    /* centers row */
     gap: 105px;
-    /* space between columns */
     margin-left: 100px;
     margin-top: 30px;
     text-align: center;
@@ -1354,13 +1325,13 @@ nav ul li a:hover {
     align-items: center;
 }
 
-.column p{
+.column p {
     font-size: 15px;
     font-weight: 500;
 }
 
-.span{
-     font-size: 15px;
+.span {
+    font-size: 15px;
     font-weight: 500;
 }
 
@@ -1377,8 +1348,6 @@ nav ul li a:hover {
     margin-bottom: 8px;
     transition: 0.3s ease;
     text-decoration: none;
-    /* Smooth animation */
-
 }
 
 .custom-btn:hover {
@@ -1386,11 +1355,11 @@ nav ul li a:hover {
 }
 
 /* 📱 Mobile view (max width 768px) */
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     .button-text-row {
-        display: flex;         /* ensure it's flex */
-        flex-direction: column; /* stack vertically */
-        gap: 10px;              /* spacing between items */
-        margin-left: 10px;      /* adjust spacing from left */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 10px;
     }
 }

@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import emailjs from "emailjs-com";
 import "./App.css";
 
-import VF1 from "./assets/VF1.png";
 import Scanner from "./assets/Scanner.jpg";
 import OneMoment from "./assets/1Moment.png";
 import Empower from "./assets/Empower.png";
@@ -14,6 +13,7 @@ import BIZWOMEN from "./assets/BIZWOMEN.png";
 import CULTUREDU from "./assets/CULTUREDU.png";
 import BCREATIVE from "./assets/BCREATIVE.png";
 import RELIVEB from "./assets/RELIVEB.png";
+import logo from "./assets/off_Logo.png";
 
 
 function App() {
@@ -23,8 +23,6 @@ function App() {
   const blogRef = useRef(null);
   const contactRef = useRef(null);
 
-  // Hamburger menu logic for mobile/compact navbar
-  // Using DOMContentLoaded event - runs once on page load
   document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector("nav ul");
@@ -72,7 +70,7 @@ function App() {
       {/* Navbar */}
       <header className="navbar">
         <div className="logo">
-          <img className="VF" src={VF1} alt="" />
+          <img className="VF" src={logo} alt="" />
           VIHANTA FOUNDATION
         </div>
         <nav>
