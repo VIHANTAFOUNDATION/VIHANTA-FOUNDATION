@@ -102,9 +102,9 @@ function App() {
           If you feel you have some charismatic power to make your life better
           but don't know what is missing & you believe that it can be achieved
           only through your profession, we are waiting for you to approach us.
-           We are there with you to achieve that.
+          We are there with you to achieve that.
         </p>
-{/*         
+        {/*         
         <p><a className="cta-btn1" href="https://forms.gle/1GMyDmCBVDTX7yV77">
           Tell Me About You
         </a> <br />
@@ -121,15 +121,15 @@ function App() {
         </p>  */}
 
         <div className="button-text-row">
-  <div className="column">
-    <a className="custom-btn" href="https://forms.gle/1GMyDmCBVDTX7yV77">👉Tell Me About You</a>
-    <p>( Click Here to Become Foundation Member )</p>
-  </div>
-  <div className="column">
-    <a className="custom-btn" href="https://ngodonation-e91d7.web.app/main-booking?id=EGQcPoHZmiddJR7D7qhxSa6kL3r2">👉Help in our Vision</a>
-    <p>( Click here to Explore All our Projects Gallery and Join as volunteer/Donate )</p>
-  </div>
-</div>
+          <div className="column">
+            <a className="custom-btn" href="https://forms.gle/1GMyDmCBVDTX7yV77">👉Tell Me About You</a>
+            <p>( Click Here to Become Foundation Member )</p>
+          </div>
+          <div className="column">
+            <a className="custom-btn" href="https://ngodonation-e91d7.web.app/main-booking?id=EGQcPoHZmiddJR7D7qhxSa6kL3r2">👉Help in our Vision</a>
+            <p>( Click here to Explore All our Projects Gallery and Join as volunteer/Donate )</p>
+          </div>
+        </div>
 
         <br /> <br /> <br />
         <img
@@ -138,8 +138,8 @@ function App() {
           alt="scan me "
         />
         <p>Scan Me <br /> <span className="span">(Take a screenshot and upload it on Google Lens)</span>
- </p>
-        
+        </p>
+
       </section>
 
       {/* About Section */}
@@ -206,7 +206,7 @@ function App() {
           <div className="blog-card moment1">
             <img className="oneMoment" src={OneMoment} alt="not able to load image" />
             <b>
-              <span>September 2025</span>
+              <span>JULY 2018</span>
             </b>
             <p>
               Do you think you want to share about the trouble in clearing a
@@ -214,16 +214,20 @@ function App() {
               <br />
               Our heartfelt intention is to help you out of that trouble, completely free of cost, simply by understanding your problem and subject better as part of 1Moment.
             </p>
+            <br />
+            <button className="moment"><a href="https://forms.gle/cHZ5S8z6uhgCRkVLA" className="join">PARTICIPATE</a></button>
           </div>
 
           <div className="blog-card">
             <img className="Empower" src={Empower} alt="" />
             <b>
-              <span>September 2025</span>
+              <span>JANUARY 2019</span>
             </b>
             <p>
               Giving first is the way to gain the most! We believe every person has unique power and special qualities that can make a difference. Let’s come forward and use our strength to change the nation together. We welcome you.
             </p>
+            <br />
+            <button className="j-f"><a href="https://forms.gle/PTcEFCdFqnLnTdi16">PARTICIPATE</a></button>
           </div>
 
           <div className="blog-card">
@@ -233,7 +237,7 @@ function App() {
               alt=""
             />
             <b>
-              <span>September 2025</span>
+              <span>AUGUST 2020</span>
             </b>
             <p>
               For us creating no Competition is like creating no challenge or
@@ -242,6 +246,8 @@ function App() {
               its origin or root place. Come and reach to farmers with an idea
               to learn about its developing process.
             </p>
+            <br />
+            <button className="j-f"><a href="https://forms.gle/djYyzFevpX1odLuKA">PARTICIPATE</a></button>
           </div>
           <div className="blog-card">
             <img
@@ -250,7 +256,7 @@ function App() {
               alt=""
             />
             <b>
-              <span>September 2025</span>
+              <span>MARCH 2018</span>
             </b>
             <p>
               ALLIANCEPATH All you need is to tie up with the right energetic
@@ -259,11 +265,13 @@ function App() {
               journey. We provide here all Trusted and tested connection you can
               trust upon.
             </p>
+            <br />
+            <button className="j-f"><a href="https://forms.gle/RYV3B4UWZkvyEuG89">PARTICIPATE</a></button>
           </div>
           <div className="blog-card">
             <img className="BCOLLAB" src={BCOLLAB} alt="" />
             <b>
-              <span>September 2025</span>
+              <span>MARCH 2018</span>
             </b>
             <p>
               Generally, trust is misunderstood by if you can trust someone but
@@ -272,12 +280,14 @@ function App() {
               individual's profile before you trust him and we achieve that
               given our in-house network across India.
             </p>
+            <br />
+            <button className="j-f"><a href="https://forms.gle/E1w1y3wEHPXaTA7P6">PARTICIPATE</a></button>
           </div>
 
           <div className="blog-card">
             <img className="WOM" src={WOM} alt="" />
             <b>
-              <span>September 2025</span>
+              <span>APRIL 2020</span>
             </b>
             <p>
               Word of Mouth popularity is the way how you can be trusted by
@@ -285,12 +295,14 @@ function App() {
               market reach. We Help you here for expanding via an authentic
               source for your Project.
             </p>
+            <br />
+            <button className="j-f"><a href="https://forms.gle/ayRiZVVskiGZbVkv6">PARTICIPATE</a></button>
           </div>
 
           <div className="blog-card">
             <img className="BIZWOMEN" src={BIZWOMEN} alt="" />
             <b>
-              <span>September 2025</span>
+              <span>JANUARY 2021</span>
             </b>
             <p>
               We Believe that businesswoman is double powered as the beauty of
@@ -298,12 +310,14 @@ function App() {
               nothing like being self dependent for women. We support this as a
               culture to all business family.
             </p>
+            <br />
+            <button className="j-f"><a href="https://forms.gle/etPZY6T5SUicRuBF6">PARTICIPATE</a></button>
           </div>
 
           <div className="blog-card">
             <img className="CULTUREDU" src={CULTUREDU} alt="" />
             <b>
-              <span>September 2025</span>
+              <span>MARCH 2019</span>
             </b>
             <p>
               For Us the top subjects are the diverse culture in India. Learning
@@ -312,12 +326,14 @@ function App() {
               have respect for across cultures. University of the same is in
               demand!
             </p>
+            <br />
+            <button className="j-f"><a href="https://forms.gle/QpQrv57oaje1Ptw39">PARTICIPATE</a></button>
           </div>
 
           <div className="blog-card">
             <img className="BCREATIVE" src={BCREATIVE} alt="" />
             <b>
-              <span>September 2025</span>
+              <span>NOVEMBER 2017</span>
             </b>
             <p>
               BCREATIVE Add Wings here to your Idea just by sharing the same.
@@ -326,12 +342,15 @@ function App() {
               the path without money motives. Pure Satisfaction in seeing your
               Idea taking shape.
             </p>
+            <br />
+            <button className="j-f"><a href="https://forms.gle/3s5FgD1C96xvcjjT8
+            ">PARTICIPATE</a></button>
           </div>
 
           <div className="blog-card">
             <img className="RELIVEB" src={RELIVEB} alt="" />
             <b>
-              <span>September 2025</span>
+              <span>DECEMBER 2020</span>
             </b>
             <p>
               Every Project that any dreamer Start has the potential to touch
@@ -340,6 +359,8 @@ function App() {
               Something and Jerk starts to revive that Project. This time all
               will be right. We are with you.
             </p>
+            <br />
+            <button className="j-f"><a href="https://forms.gle/4WxYinyC24WQa9FM7">PARTICIPATE</a></button>
           </div>
         </div>
       </section>

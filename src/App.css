@@ -55,26 +55,13 @@ body {
     width: 200px;
 }
 
-@keyframes navFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Logo - Animated gradient glow */
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 3.4rem;
     font-weight: 800;
     letter-spacing: 0.07em;
-    background: var(--navbar-gradient);
-    color: #fff;
+    background: rgb(187, 209, 23);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 3px 12px rgba(90, 178, 255, 0.14);
@@ -84,19 +71,6 @@ body {
     transition: color 0.3s;
 }
 
-@keyframes brandGlow {
-    0% {
-        text-shadow: 0 0 18px #ffd93d66, 0 2px 12px #27127521;
-    }
-
-    45% {
-        text-shadow: 0 0 30px #43bac688, 0 2px 16px #1746a221;
-    }
-
-    100% {
-        text-shadow: 0 0 28px #2155cd66, 0 3px 18px #ffd93d66;
-    }
-}
 
 /* Navbar Links */
 nav ul {
@@ -1285,11 +1259,17 @@ nav ul li a:hover {
             margin: 0 !important;
         }
 
+
         nav li {
             font-size: 0.80rem !important;
             white-space: nowrap;
             padding: 4px 2px !important;
             font-weight: bolder;
+        }
+
+        .moment {
+            margin-left: 40% !important;
+            text-decoration: none !important;
         }
 
         .Empower,
@@ -1362,4 +1342,30 @@ nav ul li a:hover {
         gap: 10px;
         margin-left: 10px;
     }
+}
+
+.j-f {
+    border-radius: 10px;
+    height: 28px;
+    width: 95px;
+    background-color: #c5d72a;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35%;
+    text-decoration: none !important;
+
+}
+
+.moment {
+    border-radius: 10px;
+    height: 28px;
+    width: 95px;
+    background-color: #c5d72a;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 47%
 }
