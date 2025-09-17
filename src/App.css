@@ -1076,6 +1076,8 @@ nav ul li a:hover {
         white-space: nowrap;
     }
 
+
+    
     .section {
         padding: 16px 2vw 15px 2vw;
         width: 100vw;
@@ -1148,6 +1150,8 @@ nav ul li a:hover {
             width: 94vw;
             margin: 10px auto 0 auto;
         }
+
+        
     }
 
     @media (max-width: 480px) {
@@ -1275,6 +1279,35 @@ nav ul li a:hover {
         }
 
        
+.cta-btn1 {
+  /* background: linear-gradient(90deg,#ffe259 0%,#ffa751 100%); */
+  background-color: #c5d72a !important;
+  margin-right: -26px;
+}
+
+.cta-btn2 {
+  /* background: linear-gradient(90deg,#ffe259 0%,#ffa751 100%); */
+  background-color: #c5d72a !important;
+  margin-left: -59px !important;
+}
+
+.cta-subtext1 {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+  color: #454e58;
+  line-height: 1.45;
+  margin-right: -27px !important;
+
+}
+.cta-subtext2 {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+  color: #454e58;
+  line-height: 1.45;
+margin-right: 35px !important;
+}
 
 
         .Empower,
