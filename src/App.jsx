@@ -15,7 +15,6 @@ import BCREATIVE from "./assets/BCREATIVE.png";
 import RELIVEB from "./assets/RELIVEB.png";
 import logo from "./assets/off_Logo.png";
 
-
 function App() {
   // References for scroll-to navigation sections
   const homeRef = useRef(null);
@@ -119,27 +118,37 @@ function App() {
         <p>
         ( Click here to Explore All our Projects Gallery and Join as Volenteer/Donate)
         </p>  */}
-
         <div className="button-text-row">
           <div className="column">
-            <a className="custom-btn" href="https://forms.gle/1GMyDmCBVDTX7yV77">👉Tell Me About You</a>
+            <a
+              className="custom-btn"
+              href="https://forms.gle/1GMyDmCBVDTX7yV77"
+            >
+              👉Tell Me About You
+            </a>
             <p>( Click Here to Become Foundation Member )</p>
           </div>
           <div className="column">
-            <a className="custom-btn" href="https://ngodonation-e91d7.web.app/main-booking?id=EGQcPoHZmiddJR7D7qhxSa6kL3r2">👉Help in our Vision</a>
-            <p>( Click here to Explore All our Projects Gallery and Join as volunteer/Donate )</p>
+            <a
+              className="custom-btn"
+              href="https://ngodonation-e91d7.web.app/main-booking?id=EGQcPoHZmiddJR7D7qhxSa6kL3r2"
+            >
+              👉Help in our Vision
+            </a>
+            <p>
+              ( Click here to Explore All our Projects Gallery and Join as
+              volunteer/Donate )
+            </p>
           </div>
         </div>
-
         <br /> <br /> <br />
-        <img
-          className="scanner"
-          src={Scanner}
-          alt="scan me "
-        />
-        <p>Scan Me <br /> <span className="span">(Take a screenshot and upload it on Google Lens)</span>
+        <img className="scanner" src={Scanner} alt="scan me " />
+        <p>
+          Scan Me <br />{" "}
+          <span className="span">
+            (Take a screenshot and upload it on Google Lens)
+          </span>
         </p>
-
       </section>
 
       {/* About Section */}
@@ -159,15 +168,15 @@ function App() {
               waiting for the right person to support him. One day he met
               someone like that & the challenge was to gain the trust of such
               godfather. Ram could manage to sustain the relation with him and
-              continued  the learning & working journey together. Ram worked
+              continued the learning & working journey together. Ram worked
               hard, harder, even Hardest & tasted the success bit by bit,
               everything eventually started falling in his favor due to his
-              respect for the godfather and his attention and hard work towards work.
-              All of a sudden, he faces much bigger problem but the destiny has
-              decided that ram could handle this monster issue alone. Ram
-              successfully did the same, now Problems are like a piece of cake for RAM &
-              he is enjoying the success every second of his life with
-              happiness. The nationwide celebration looks closer.
+              respect for the godfather and his attention and hard work towards
+              work. All of a sudden, he faces much bigger problem but the
+              destiny has decided that ram could handle this monster issue
+              alone. Ram successfully did the same, now Problems are like a
+              piece of cake for RAM & he is enjoying the success every second of
+              his life with happiness. The nationwide celebration looks closer.
             </p>
           </div>
           <div className="about-card">
@@ -204,7 +213,11 @@ function App() {
         </b>
         <div className="blog-posts">
           <div className="blog-card moment1">
-            <img className="oneMoment" src={OneMoment} alt="not able to load image" />
+            <img
+              className="oneMoment"
+              src={OneMoment}
+              alt="not able to load image"
+            />
             <b>
               <span>JULY 2018</span>
             </b>
@@ -212,10 +225,50 @@ function App() {
               Do you think you want to share about the trouble in clearing a
               transaction with anyone in past. Take 1moment & share with us.{" "}
               <br />
-              Our heartfelt intention is to help you out of that trouble, completely free of cost, simply by understanding your problem and subject better as part of 1Moment.
+              Our heartfelt intention is to help you out of that trouble,
+              completely free of cost, simply by understanding your problem and
+              subject better as part of 1Moment.
             </p>
             <br />
-            <button className="moment"><a href="https://forms.gle/cHZ5S8z6uhgCRkVLA" className="join">PARTICIPATE</a></button>
+            {/* <button className="moment"><a href="https://forms.gle/cHZ5S8z6uhgCRkVLA" className="join">PARTICIPATE</a></button>
+            <button className="wp"><a href="https://forms.gle/cHZ5S8z6uhgCRkVLA">JOIN</a></button> */}
+
+            {/* <div className="button-container">
+              <button className="moment">
+                <a href="https://forms.gle/cHZ5S8z6uhgCRkVLA" className="join">
+                  PARTICIPATE
+                </a>
+              </button>
+              <button className="wp">
+                <a href="https://chat.whatsapp.com/IaheXdesHQt7MkQtF60Lte">join</a>
+              </button> <br />
+            </div>
+              <span>Google Form</span><span>   WhatsApp Community</span> */}
+
+            <div className="cta-buttons">
+              <div className="cta-with-text">
+                <a
+                  href="https://forms.gle/cHZ5S8z6uhgCRkVLA"
+                  className="cta-btn1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >PARTICIPATE</a>
+                <div className="cta-subtext1">Google Form</div>
+              </div>
+              <div className="cta-with-text">
+                <a
+                  href="https://chat.whatsapp.com/IaheXdesHQt7MkQtF60Lte"
+                  className="cta-btn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >JOIN</a>
+                <div className="cta-subtext2">WhatsApp community</div>
+              </div>
+            </div>
+
+
+
+
           </div>
 
           <div className="blog-card">
@@ -224,18 +277,51 @@ function App() {
               <span>JANUARY 2019</span>
             </b>
             <p>
-              Giving first is the way to gain the most! We believe every person has unique power and special qualities that can make a difference. Let’s come forward and use our strength to change the nation together. We welcome you.
+              Giving first is the way to gain the most! We believe every person
+              has unique power and special qualities that can make a difference.
+              Let’s come forward and use our strength to change the nation
+              together. We welcome you.
             </p>
             <br />
-            <button className="j-f"><a href="https://forms.gle/PTcEFCdFqnLnTdi16">PARTICIPATE</a></button>
+            {/* <div className="button-container">
+              <button className="moment">
+                <a href="https://forms.gle/PTcEFCdFqnLnTdi16" className="join">
+                  PARTICIPATE
+                </a>
+              </button>
+              <button className="wp">
+                <a href="https://chat.whatsapp.com/GDDyRM4APLkGYjNWp6o2rC">JOIN</a>
+              </button>
+              <br />
+
+            </div>
+             <span className="but-join">Google Form  WhatsApp Community</span> */}
+
+            <div className="cta-buttons">
+              <div className="cta-with-text">
+                <a
+                  href="https://forms.gle/PTcEFCdFqnLnTdi16"
+                  className="cta-btn1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >PARTICIPATE</a>
+                <div className="cta-subtext1">Google Form</div>
+              </div>
+              <div className="cta-with-text">
+                <a
+                  href="https://chat.whatsapp.com/GDDyRM4APLkGYjNWp6o2rC"
+                  className="cta-btn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >JOIN</a>
+                <div className="cta-subtext2">WhatsApp community</div>
+              </div>
+            </div>
+
           </div>
 
           <div className="blog-card">
-            <img
-              className="INDUSTRIP"
-              src={INDUSTRIP}
-              alt=""
-            />
+            <img className="INDUSTRIP" src={INDUSTRIP} alt="" />
             <b>
               <span>AUGUST 2020</span>
             </b>
@@ -247,14 +333,47 @@ function App() {
               to learn about its developing process.
             </p>
             <br />
-            <button className="j-f"><a href="https://forms.gle/djYyzFevpX1odLuKA">PARTICIPATE</a></button>
+
+            {/* <button className="j-f">
+              <a href="https://forms.gle/djYyzFevpX1odLuKA">PARTICIPATE</a>
+            </button> */}
+            {/* <div className="button-container">
+              <button className="moment">
+                <a href="https://forms.gle/djYyzFevpX1odLuKA" className="join">
+                  PARTICIPATE 
+                </a>
+              </button>
+              <button className="wp">
+                <a href="https://chat.whatsapp.com/Ftdq8OtAfzJ7EycA6cVZOj">JOIN</a>
+              </button>
+                            <span>Google Form     WhatsApp Community</span>
+
+            </div> */}
+
+            <div className="cta-buttons">
+              <div className="cta-with-text">
+                <a
+                  href="https://forms.gle/djYyzFevpX1odLuKA"
+                  className="cta-btn1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >PARTICIPATE</a>
+                <div className="cta-subtext1">Google Form</div>
+              </div>
+              <div className="cta-with-text">
+                <a
+                  href="https://chat.whatsapp.com/Ftdq8OtAfzJ7EycA6cVZOj"
+                  className="cta-btn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >JOIN</a>
+                <div className="cta-subtext2">WhatsApp community</div>
+              </div>
+            </div>
+
           </div>
           <div className="blog-card">
-            <img
-              className="INDUSTRIP"
-              src={ALLIANCEPATH}
-              alt=""
-            />
+            <img className="INDUSTRIP" src={ALLIANCEPATH} alt="" />
             <b>
               <span>MARCH 2018</span>
             </b>
@@ -266,7 +385,41 @@ function App() {
               trust upon.
             </p>
             <br />
-            <button className="j-f"><a href="https://forms.gle/RYV3B4UWZkvyEuG89">PARTICIPATE</a></button>
+            {/* <button className="j-f">
+              <a href="https://forms.gle/RYV3B4UWZkvyEuG89">PARTICIPATE</a>
+            </button> */}
+
+            {/* <div className="button-container">
+              <button className="moment">
+                <a href="https://forms.gle/RYV3B4UWZkvyEuG89" className="join">
+                  PARTICIPATE Google Form
+                </a>
+              </button>
+              <button className="wp">
+                <a href="https://chat.whatsapp.com/BQhCTH2onLi5O7q2y47hwJ">JOIN WhatsApp Community</a>
+              </button>
+            </div> */}
+
+            <div className="cta-buttons">
+              <div className="cta-with-text">
+                <a
+                  href="https://forms.gle/RYV3B4UWZkvyEuG89"
+                  className="cta-btn1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >PARTICIPATE</a>
+                <div className="cta-subtext1">Google Form</div>
+              </div>
+              <div className="cta-with-text">
+                <a
+                  href="https://chat.whatsapp.com/BQhCTH2onLi5O7q2y47hwJ"
+                  className="cta-btn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >JOIN</a>
+                <div className="cta-subtext2">WhatsApp community</div>
+              </div>
+            </div>
           </div>
           <div className="blog-card">
             <img className="BCOLLAB" src={BCOLLAB} alt="" />
@@ -281,7 +434,41 @@ function App() {
               given our in-house network across India.
             </p>
             <br />
-            <button className="j-f"><a href="https://forms.gle/E1w1y3wEHPXaTA7P6">PARTICIPATE</a></button>
+            {/* <button className="j-f">
+              <a href="https://forms.gle/E1w1y3wEHPXaTA7P6">PARTICIPATE</a>
+            </button> */}
+            {/* <div className="button-container">
+              <button className="moment">
+                <a href="https://forms.gle/E1w1y3wEHPXaTA7P6" className="join">
+                  PARTICIPATE Google Form
+                </a>
+              </button>
+              <button className="wp">
+                <a href="https://chat.whatsapp.com/IeFZwgwhc6nDX1hLnJ9c7I">JOIN WhatsApp Community</a>
+              </button>
+            </div> */}
+
+            <div className="cta-buttons">
+              <div className="cta-with-text">
+                <a
+                  href="https://forms.gle/E1w1y3wEHPXaTA7P6"
+                  className="cta-btn1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >PARTICIPATE</a>
+                <div className="cta-subtext1">Google Form</div>
+              </div>
+              <div className="cta-with-text">
+                <a
+                  href="https://chat.whatsapp.com/IeFZwgwhc6nDX1hLnJ9c7I"
+                  className="cta-btn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >JOIN</a>
+                <div className="cta-subtext2">WhatsApp community</div>
+              </div>
+            </div>
+
           </div>
 
           <div className="blog-card">
@@ -296,7 +483,41 @@ function App() {
               source for your Project.
             </p>
             <br />
-            <button className="j-f"><a href="https://forms.gle/ayRiZVVskiGZbVkv6">PARTICIPATE</a></button>
+            {/* <button className="j-f">
+              <a href="https://forms.gle/ayRiZVVskiGZbVkv6">PARTICIPATE</a>
+            </button> */}
+            {/* <div className="button-container">
+              <button className="moment">
+                <a href="https://forms.gle/ayRiZVVskiGZbVkv6" className="join">
+                  PARTICIPATE
+                </a>
+              </button>
+              <button className="wp">
+                <a href="https://chat.whatsapp.com/H07KaKtgi1f78Ctv2XwHGf">JOIN WhatsApp Community</a>
+              </button>
+            </div> */}
+
+            <div className="cta-buttons">
+              <div className="cta-with-text">
+                <a
+                  href="https://forms.gle/ayRiZVVskiGZbVkv6"
+                  className="cta-btn1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >PARTICIPATE</a>
+                <div className="cta-subtext1">Google Form</div>
+              </div>
+              <div className="cta-with-text">
+                <a
+                  href="https://chat.whatsapp.com/H07KaKtgi1f78Ctv2XwHGf"
+                  className="cta-btn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >JOIN</a>
+                <div className="cta-subtext2">WhatsApp community</div>
+              </div>
+            </div>
+
           </div>
 
           <div className="blog-card">
@@ -311,7 +532,41 @@ function App() {
               culture to all business family.
             </p>
             <br />
-            <button className="j-f"><a href="https://forms.gle/etPZY6T5SUicRuBF6">PARTICIPATE</a></button>
+            {/* <button className="j-f">
+              <a href="https://forms.gle/etPZY6T5SUicRuBF6">PARTICIPATE</a>
+            </button> */}
+            {/* <div className="button-container">
+              <button className="moment">
+                <a href="https://forms.gle/etPZY6T5SUicRuBF6" className="join">
+                  PARTICIPATE Google Form
+                </a>
+              </button>
+              <button className="wp">
+                <a href="https://chat.whatsapp.com/BFe4JzV0Fd22sLzgz9AbAW">JOIN WhatsApp Community</a>
+              </button>
+            </div> */}
+
+            <div className="cta-buttons">
+              <div className="cta-with-text">
+                <a
+                  href="https://forms.gle/etPZY6T5SUicRuBF6"
+                  className="cta-btn1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >PARTICIPATE</a>
+                <div className="cta-subtext1">Google Form</div>
+              </div>
+              <div className="cta-with-text">
+                <a
+                  href="https://chat.whatsapp.com/BFe4JzV0Fd22sLzgz9AbAW"
+                  className="cta-btn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >JOIN</a>
+                <div className="cta-subtext2">WhatsApp community</div>
+              </div>
+            </div>
+
           </div>
 
           <div className="blog-card">
@@ -327,7 +582,41 @@ function App() {
               demand!
             </p>
             <br />
-            <button className="j-f"><a href="https://forms.gle/QpQrv57oaje1Ptw39">PARTICIPATE</a></button>
+            {/* <button className="j-f">
+              <a href="https://forms.gle/QpQrv57oaje1Ptw39">PARTICIPATE</a>
+            </button> */}
+            {/* <div className="button-container">
+              <button className="moment">
+                <a href="https://forms.gle/QpQrv57oaje1Ptw39" className="join">
+                  PARTICIPATE Google Form
+                </a>
+              </button>
+              <button className="wp">
+                <a href="https://chat.whatsapp.com/EXucULhGLApHIY28nd8bhk">JOIN WhatsApp Community</a>
+              </button>
+            </div> */}
+
+            <div className="cta-buttons">
+              <div className="cta-with-text">
+                <a
+                  href="https://forms.gle/QpQrv57oaje1Ptw39"
+                  className="cta-btn1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >PARTICIPATE</a>
+                <div className="cta-subtext1">Google Form</div>
+              </div>
+              <div className="cta-with-text">
+                <a
+                  href="https://chat.whatsapp.com/EXucULhGLApHIY28nd8bhk"
+                  className="cta-btn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >JOIN</a>
+                <div className="cta-subtext2">WhatsApp community</div>
+              </div>
+            </div>
+
           </div>
 
           <div className="blog-card">
@@ -343,8 +632,47 @@ function App() {
               Idea taking shape.
             </p>
             <br />
-            <button className="j-f"><a href="https://forms.gle/3s5FgD1C96xvcjjT8
-            ">PARTICIPATE</a></button>
+            {/* <button className="j-f">
+              <a
+                href="https://forms.gle/3s5FgD1C96xvcjjT8
+            "
+              >
+                PARTICIPATE
+              </a>
+            </button> */}
+            {/* <div className="button-container">
+              <button className="moment">
+                <a href="https://forms.gle/3s5FgD1C96xvcjjT8" className="join">
+                  PARTICIPATE Google Form
+                </a>
+              </button>
+              <button className="wp">
+                <a href="https://chat.whatsapp.com/JfnOLS6jl97Gh2RxacwtfP">JOIN WhatsApp Community</a>
+              </button>
+            </div> */}
+
+            <div className="cta-buttons">
+              <div className="cta-with-text">
+                <a
+                  href="https://forms.gle/3s5FgD1C96xvcjjT8"
+                  className="cta-btn1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >PARTICIPATE</a>
+                <div className="cta-subtext1">Google Form</div>
+              </div>
+              <div className="cta-with-text">
+                <a
+                  href="https://chat.whatsapp.com/JfnOLS6jl97Gh2RxacwtfP"
+                  className="cta-btn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >JOIN</a>
+                <div className="cta-subtext2">WhatsApp community</div>
+              </div>
+            </div>
+
+
           </div>
 
           <div className="blog-card">
@@ -360,7 +688,43 @@ function App() {
               will be right. We are with you.
             </p>
             <br />
-            <button className="j-f"><a href="https://forms.gle/4WxYinyC24WQa9FM7">PARTICIPATE</a></button>
+            {/* <button className="j-f">
+              <a href="https://forms.gle/4WxYinyC24WQa9FM7">PARTICIPATE</a>
+            </button> */}
+
+            {/* <div className="button-container">
+              <button className="moment">
+                <a href="https://forms.gle/4WxYinyC24WQa9FM7" className="join">
+                  PARTICIPATE Google Form
+                </a>
+              </button>
+              <button className="wp">
+                <a href="https://chat.whatsapp.com/F8XTjHvMEoBAy1X0hPg94Q">JOIN WhatsApp Community</a>
+              </button>
+            </div> */}
+
+<div className="cta-buttons">
+              <div className="cta-with-text">
+                <a
+                  href="https://forms.gle/4WxYinyC24WQa9FM7"
+                  className="cta-btn1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >PARTICIPATE</a>
+                <div className="cta-subtext1">Google Form</div>
+              </div>
+              <div className="cta-with-text">
+                <a
+                  href="https://chat.whatsapp.com/F8XTjHvMEoBAy1X0hPg94Q"
+                  className="cta-btn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >JOIN</a>
+                <div className="cta-subtext2">WhatsApp community</div>
+              </div>
+            </div>
+
+
           </div>
         </div>
       </section>
