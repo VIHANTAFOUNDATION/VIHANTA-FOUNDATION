@@ -1293,7 +1293,7 @@ nav ul li a:hover {
 
 .cta-subtext1 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 12px !important;
   text-align: center;
   color: #454e58;
   line-height: 1.45;
@@ -1302,11 +1302,11 @@ nav ul li a:hover {
 }
 .cta-subtext2 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 12px !important; 
   text-align: center;
   color: #454e58;
   line-height: 1.45;
-margin-right: 35px !important;
+margin-right: 38px !important;
 }
 
 
