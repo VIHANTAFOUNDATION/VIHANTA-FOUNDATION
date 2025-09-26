@@ -703,7 +703,7 @@ function App() {
               </button>
             </div> */}
 
-<div className="cta-buttons">
+            <div className="cta-buttons">
               <div className="cta-with-text">
                 <a
                   href="https://forms.gle/4WxYinyC24WQa9FM7"
@@ -748,6 +748,33 @@ function App() {
           <p>Phone: +91 9867679750</p>
         </div>
       </section>
+      <div className="terms">
+        <h3>Terms and Condition</h3>
+        <h5>
+         - By accessing this website and making a donation to VIHANTA FOUNDATION, donors agree to the following terms: <br />
+         - All donations are voluntary and will be used for the charitable objectives and projects of VIHANTA FOUNDATION. <br />
+         - Donors confirm that all funds offered are from lawful sources and that the donations are non-refundable. <br />
+         - Tax exemption is available only if VIHANTA FOUNDATION holds the necessary government certification; donors must provide correct details for receipts and benefits. <br />
+         - VIHANTA FOUNDATION pledges that all funds will be utilized in line with its mission and will not be used for unlawful purposes. <br />
+         - Donors may receive donation receipts or acknowledgment, but no goods or services of commercial value are provided in return. <br />
+         - The foundation reserves the right to update or amend these terms. Continued use of the donation facilities constitutes acceptance of any changes. <br />
+         - Any dispute arising from donations shall be subject to the jurisdiction of Mumbai.</h5>
+        <br />
+        <h3 className="pvc">Privacy Policy </h3>
+        <h5>
+          - VIHANTA FOUNDATION values the privacy of its donors and website visitors. This notice describes our personal data handling practices: <br />
+          - Information such as donor name, contact information, and transaction details is collected only for processing donations, recordkeeping, and issuing receipts. <br />
+          - Personal data is not shared or sold to third parties except as required for legal compliance, auditing, or enabling payment gateways. <br />
+          - Payment-related data is secured and processed via certified payment gateways; VIHANTA FOUNDATION does not store card or sensitive banking details. <br />
+          - Donors can request updates or corrections to their information at any time by contacting Email: vihantafoundation@gmail.com <br />
+          - Website cookies and analytics tools may be used for site monitoring and improvement; no sensitive personal data is collected through these means. <br />
+          - The foundation does not knowingly collect information from children or minors. <br />
+          - This policy may be updated; updated versions will be posted on this page.</h5>
+        <br />
+        <h3>Return and refund policy</h3>
+        <h4 className="rfp">We do not have any return and refund policy as we are functioning as not for profit.</h4>
+
+      </div>
 
       {/* Footer */}
       <footer className="footer">
