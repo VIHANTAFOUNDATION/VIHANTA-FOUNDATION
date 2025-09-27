@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+// import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+
 import emailjs from "emailjs-com";
 import "./App.css";
 
@@ -14,6 +16,7 @@ import CULTUREDU from "./assets/CULTUREDU.png";
 import BCREATIVE from "./assets/BCREATIVE.png";
 import RELIVEB from "./assets/RELIVEB.png";
 import logo from "./assets/off_Logo.png";
+import QRCODE from "./assets/QR.png";
 
 function App() {
   // References for scroll-to navigation sections
@@ -21,6 +24,9 @@ function App() {
   const aboutRef = useRef(null);
   const blogRef = useRef(null);
   const contactRef = useRef(null);
+  const [showQR, setShowQR] = useState(false);
+
+
 
   document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.querySelector(".hamburger");
@@ -150,6 +156,24 @@ function App() {
           </span>
         </p>
       </section>
+
+ {/* Sticky Donate Button */}
+      <button className="donate-btn" onClick={() => setShowQR(true)}>
+        Donate 🤝
+      </button>
+
+      {/* QR Popup */}
+      {showQR && (
+        <div className="qr-overlay" onClick={() => setShowQR(false)}>
+          <div className="qr-popup" onClick={(e) => e.stopPropagation()}>
+            <img src={QRCODE} alt="Scan to Donate" className="qr-img" />
+            <p>Scan this QR to Donate</p>
+            <button className="close-btn" onClick={() => setShowQR(false)}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* About Section */}
       <section className="section about" ref={aboutRef}>

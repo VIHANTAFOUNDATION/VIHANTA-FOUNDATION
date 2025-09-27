@@ -1565,3 +1565,64 @@ nav ul li a:hover {
   .terms-list li { font-size: 0.89rem; margin-bottom: 8px; }
   .rfp { font-size: 0.85rem; padding: 7px 7px; }
 }
+
+.donate-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #A020F0; /* logo purple */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  border: none;
+  cursor: pointer;
+}
+
+.donate-btn:hover {
+  background-color: #7B1FA2; /* darker purple */
+  transform: scale(1.05);
+}
+
+.qr-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.qr-popup {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.qr-img {
+  width: 250px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  background: #A020F0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #7B1FA2;
+}
