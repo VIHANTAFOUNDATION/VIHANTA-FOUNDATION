@@ -1566,6 +1566,9 @@ nav ul li a:hover {
   .rfp { font-size: 0.85rem; padding: 7px 7px; }
 }
 
+
+
+
 .donate-btn {
   position: fixed;
   bottom: 20px;
@@ -1625,4 +1628,199 @@ nav ul li a:hover {
 
 .close-btn:hover {
   background: #7B1FA2;
+}
+
+
+/* .form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.form-popup {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 350px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(28, 43, 51, 0.35);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: modalFadeIn 0.3s;
+}
+
+/* Modal Container */
+.modal {
+  background: #fff;
+  border-radius: 1.1rem;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.19), 0 2px 4px 0 rgba(60,60,80,0.12);
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  max-width: 420px;
+  width: 90vw;
+  position: relative;
+  animation: modalPopIn 0.2s cubic-bezier(.4,2,.2,1) both;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0;}
+  to   { opacity: 1;}
+}
+
+@keyframes modalPopIn {
+  0%   { transform: translateY(40px) scale(0.92); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1;}
+}
+
+/* Close Button */
+.modal-close {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 1rem; right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #184785;
+  transition: color .17s;
+}
+.modal-close:hover {
+  color: #b22b2b;
+}
+
+/* Modal Content */
+.modal h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.45rem;
+  text-align: center;
+  color: #7B1FA2;
+  font-weight: 700;
+}
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+.modal form div {
+  margin-bottom: 0.95rem;
+}
+.modal label {
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  color: #7B1FA2;
+  font-size: 0.98rem;
+  display: block;
+}
+.modal input,
+.modal textarea {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.57rem 0.9rem;
+  border: 1px solid #c7d4e5;
+  border-radius: 6px;
+  outline: none;
+  margin-top: 0.13rem;
+  background: #f6fafd;
+  transition: border 0.15s;
+}
+.modal input:focus,
+.modal textarea:focus {
+  border: 1.5px solid #1a73e8;
+}
+
+/* Donate Button (reusable) */
+.donate-btn {
+  position: fixed;
+  bottom: 22px;
+  right: 28px;
+  background: linear-gradient(90deg, #7B1FA2);
+  color: #fff;
+  padding: 0.95rem 2.1rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.18rem;
+  font-weight: 700;
+  box-shadow: 0 5px 18px rgba(30,80,190,0.20);
+  cursor: pointer;
+  z-index: 1001;
+  transition: background 0.22s, box-shadow 0.21s;
+}
+.donate-btn:hover {
+  background: linear-gradient(90deg, #600985);
+  box-shadow: 0 8px 24px rgba(20, 60, 190, 0.27);
+}
+
+/* Modal Donate Button */
+.modal button[type="submit"] {
+  margin-top: 0.8rem;
+  width: 100%;
+  background: linear-gradient(90deg, #7B1FA2);
+  border: none;
+  color: #fff;
+  font-size: 1.09rem;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.7rem 0;
+  cursor: pointer;
+  transition: background .15s;
+}
+.modal button[type="submit"]:hover {
+  background: linear-gradient(90deg,#500a6e);
+}
+
+.modal-message {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.06rem;
+  color: #11632a;
+  font-weight: 600;
+}
+
+/* -- General Form Reset -- */
+.modal input[type="number"]::-webkit-inner-spin-button {
+  opacity: 0.75;
+}
+
+@media (max-width: 600px) {
+  .modal {
+    padding: 1.3rem 0.6rem 1rem 0.6rem;
+    max-width: 97vw;
+  }
+  .donate-btn {
+    right: 10px; bottom: 10px; font-size: 1rem;
+    padding: 0.8rem 1.25rem;
+  }
+}
+
+/* Optional: make outer scroll unscrollable when modal opens */
+body.modal-open {
+  overflow: hidden;
 }

@@ -1,9 +1,9 @@
-// import React, { useRef } from "react";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
+
+import axios from "axios";
 
 import emailjs from "emailjs-com";
 import "./App.css";
-
 import Scanner from "./assets/Scanner.jpg";
 import OneMoment from "./assets/1Moment.png";
 import Empower from "./assets/Empower.png";
@@ -26,20 +26,104 @@ function App() {
   const contactRef = useRef(null);
   const [showQR, setShowQR] = useState(false);
 
+  const [showForm, setShowForm] = useState(false);
+  // const [donorName, setDonorName] = useState("");
+  // const [donorpanno, setDonorpanno] = useState("");
+  // const [donorPhone, setDonorPhone] = useState("");
+  // const [panno, setpanno] = useState("");
+  const [donationAmount, setDonationAmount] = useState(500); // default amount
+
+  const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [pan, setPan] = useState("");
+    const [address, setAddress] = useState("");
+    const [amount, setAmount] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
 
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector("nav ul");
 
-    if (hamburger && navMenu) {
-      hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
+  const handleDonate = async (e) => {
+    e.preventDefault();
+    setMessage("");
+    if (!name || !phone || !pan || !address || !amount) return setMessage("Please fill all fields.");
+
+    setLoading(true);
+    try {
+      const orderResp = await axios.post(`${BACKEND_URL}/create-order`, {
+        name, phone, pan, address, amount: Number(amount)
       });
+
+      const { orderId, razorpayKey } = orderResp.data;
+      await loadRazorpaySDK();
+
+      const options = {
+        key: razorpayKey,
+        amount: Number(amount) * 100,
+        currency: "INR",
+        name: "Vihanta Foundation",
+        description: "Donation",
+        order_id: orderId,
+        prefill: { name, contact: phone },
+        handler: async function (response) {
+          try {
+            const verifyResp = await axios.post(`${BACKEND_URL}/verify-payment`, {
+              ...response,
+              donor: { name, phone, pan, address, amount }
+            });
+
+            if (verifyResp.data.status === "ok") {
+              setMessage("Donation successful! Thank you ❤️");
+            } else {
+              setMessage("Payment verification failed.");
+            }
+          } catch {
+            setMessage("Verification error.");
+          }
+        },
+        theme: { color: "#1a73e8" }
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.on("payment.failed", function () { setMessage("Payment failed or cancelled."); });
+      rzp.open();
+    } catch (err) {
+      setMessage("Could not create order. Try again later.");
+    } finally {
+      setLoading(false);
     }
-  });
+  };
+
+
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   const hamburger = document.querySelector(".hamburger");
+  //   const navMenu = document.querySelector("nav ul");
+
+  //   if (hamburger && navMenu) {
+  //     hamburger.addEventListener("click", () => {
+  //       navMenu.classList.toggle("show");
+  //     });
+  //   }
+  // });
 
   // Function to smoothly scroll to target section when nav item clicked
+  
+  useEffect(() => {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector("nav ul");
+
+  if (hamburger && navMenu) {
+    const toggleMenu = () => navMenu.classList.toggle("show");
+    hamburger.addEventListener("click", toggleMenu);
+
+    // Cleanup
+    return () => hamburger.removeEventListener("click", toggleMenu);
+  }
+}, []);
+
+  
   const scrollTo = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
@@ -70,6 +154,19 @@ function App() {
       );
   };
 
+
+  
+function loadRazorpaySDK() {
+  return new Promise((resolve, reject) => {
+    if (window.Razorpay) return resolve();
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error("Razorpay SDK failed to load."));
+    document.body.appendChild(script);
+  });
+}
+
   return (
     <>
       {/* Navbar */}
@@ -82,7 +179,6 @@ function App() {
           <ul>
             <li onClick={() => scrollTo(homeRef)}>Home</li>
             <li onClick={() => scrollTo(aboutRef)}>About</li>
-            {/* <li onClick={() => scrollTo(blogRef)}>Ser~vices</li> */}
             <li onClick={() => scrollTo(blogRef)}>Projects</li>
             <li onClick={() => scrollTo(contactRef)}>Contact</li>
           </ul>
@@ -109,21 +205,8 @@ function App() {
           only through your profession, we are waiting for you to approach us.
           We are there with you to achieve that.
         </p>
-        {/*         
-        <p><a className="cta-btn1" href="https://forms.gle/1GMyDmCBVDTX7yV77">
-          Tell Me About You
-        </a> <br />
-        ( Click Here to Become Foundation Member)</p>
+        
 
-        <a
-          className="cta-btn2"
-          href="https://ngodonation-e91d7.web.app/main-booking?id=EGQcPoHZmiddJR7D7qhxSa6kL3r2"
-          >
-          Help in our Vision
-        </a>
-        <p>
-        ( Click here to Explore All our Projects Gallery and Join as Volenteer/Donate)
-        </p>  */}
         <div className="button-text-row">
           <div className="column">
             <a
@@ -157,23 +240,49 @@ function App() {
         </p>
       </section>
 
- {/* Sticky Donate Button */}
-      <button className="donate-btn" onClick={() => setShowQR(true)}>
-        Donate 🤝
-      </button>
 
-      {/* QR Popup */}
-      {showQR && (
-        <div className="qr-overlay" onClick={() => setShowQR(false)}>
-          <div className="qr-popup" onClick={(e) => e.stopPropagation()}>
-            <img src={QRCODE} alt="Scan to Donate" className="qr-img" />
-            <p>Scan this QR to Donate</p>
-            <button className="close-btn" onClick={() => setShowQR(false)}>
-              Close
-            </button>
-          </div>
+{/* Donate Button triggers modal */}
+<button className="donate-btn" onClick={() => setShowForm(true)}>
+  Donate 🤝
+</button>
+
+{/* Popup Modal for Donation Form */}
+{showForm && (
+  <div className="modal-backdrop" onClick={() => setShowForm(false)}>
+    <div className="modal" onClick={e => e.stopPropagation()}>
+      <button className="modal-close" onClick={() => setShowForm(false)}>&times;</button>
+      <h2>Donate to Vihanta Foundation</h2>
+      <form onSubmit={handleDonate}>
+        <div>
+          <label>Name</label>
+          <input value={name} onChange={e => setName(e.target.value)} required />
         </div>
-      )}
+        <div>
+          <label>Phone</label>
+          <input value={phone} onChange={e => setPhone(e.target.value)} required />
+        </div>
+        <div>
+          <label>PAN Number</label>
+          <input value={pan} onChange={e => setPan(e.target.value)} required    placeholder="Enter PAN Number to get the benefits of 80G" />
+        </div>
+        <div>
+          <label>Address</label>
+          <textarea value={address} onChange={e => setAddress(e.target.value)} required />
+        </div>
+        <div>
+          <label>Amount (INR)</label>
+          <input type="number" value={amount} onChange={e => setAmount(e.target.value)} required min="1" />
+        </div>
+        <button type="submit" disabled={loading}>
+          {loading ? "Processing..." : "Donate"}
+        </button>
+      </form>
+      {message && <p className="modal-message">{message}</p>}
+    </div>
+  </div>
+)}
+
+
 
       {/* About Section */}
       <section className="section about" ref={aboutRef}>
@@ -276,7 +385,9 @@ function App() {
                   className="cta-btn1"
                   target="_blank"
                   rel="noopener noreferrer"
-                >PARTICIPATE</a>
+                >
+                  PARTICIPATE
+                </a>
                 <div className="cta-subtext1">Google Form</div>
               </div>
               <div className="cta-with-text">
@@ -285,14 +396,12 @@ function App() {
                   className="cta-btn2"
                   target="_blank"
                   rel="noopener noreferrer"
-                >JOIN</a>
+                >
+                  JOIN
+                </a>
                 <div className="cta-subtext2">WhatsApp community</div>
               </div>
             </div>
-
-
-
-
           </div>
 
           <div className="blog-card">
@@ -328,7 +437,9 @@ function App() {
                   className="cta-btn1"
                   target="_blank"
                   rel="noopener noreferrer"
-                >PARTICIPATE</a>
+                >
+                  PARTICIPATE
+                </a>
                 <div className="cta-subtext1">Google Form</div>
               </div>
               <div className="cta-with-text">
@@ -337,11 +448,12 @@ function App() {
                   className="cta-btn2"
                   target="_blank"
                   rel="noopener noreferrer"
-                >JOIN</a>
+                >
+                  JOIN
+                </a>
                 <div className="cta-subtext2">WhatsApp community</div>
               </div>
             </div>
-
           </div>
 
           <div className="blog-card">
@@ -381,7 +493,9 @@ function App() {
                   className="cta-btn1"
                   target="_blank"
                   rel="noopener noreferrer"
-                >PARTICIPATE</a>
+                >
+                  PARTICIPATE
+                </a>
                 <div className="cta-subtext1">Google Form</div>
               </div>
               <div className="cta-with-text">
@@ -390,11 +504,12 @@ function App() {
                   className="cta-btn2"
                   target="_blank"
                   rel="noopener noreferrer"
-                >JOIN</a>
+                >
+                  JOIN
+                </a>
                 <div className="cta-subtext2">WhatsApp community</div>
               </div>
             </div>
-
           </div>
           <div className="blog-card">
             <img className="INDUSTRIP" src={ALLIANCEPATH} alt="" />
@@ -431,7 +546,9 @@ function App() {
                   className="cta-btn1"
                   target="_blank"
                   rel="noopener noreferrer"
-                >PARTICIPATE</a>
+                >
+                  PARTICIPATE
+                </a>
                 <div className="cta-subtext1">Google Form</div>
               </div>
               <div className="cta-with-text">
@@ -440,7 +557,9 @@ function App() {
                   className="cta-btn2"
                   target="_blank"
                   rel="noopener noreferrer"
-                >JOIN</a>
+                >
+                  JOIN
+                </a>
                 <div className="cta-subtext2">WhatsApp community</div>
               </div>
             </div>
@@ -479,7 +598,9 @@ function App() {
                   className="cta-btn1"
                   target="_blank"
                   rel="noopener noreferrer"
-                >PARTICIPATE</a>
+                >
+                  PARTICIPATE
+                </a>
                 <div className="cta-subtext1">Google Form</div>
               </div>
               <div className="cta-with-text">
@@ -488,11 +609,12 @@ function App() {
                   className="cta-btn2"
                   target="_blank"
                   rel="noopener noreferrer"
-                >JOIN</a>
+                >
+                  JOIN
+                </a>
                 <div className="cta-subtext2">WhatsApp community</div>
               </div>
             </div>
-
           </div>
 
           <div className="blog-card">
@@ -528,7 +650,9 @@ function App() {
                   className="cta-btn1"
                   target="_blank"
                   rel="noopener noreferrer"
-                >PARTICIPATE</a>
+                >
+                  PARTICIPATE
+                </a>
                 <div className="cta-subtext1">Google Form</div>
               </div>
               <div className="cta-with-text">
@@ -537,11 +661,12 @@ function App() {
                   className="cta-btn2"
                   target="_blank"
                   rel="noopener noreferrer"
-                >JOIN</a>
+                >
+                  JOIN
+                </a>
                 <div className="cta-subtext2">WhatsApp community</div>
               </div>
             </div>
-
           </div>
 
           <div className="blog-card">
@@ -577,7 +702,9 @@ function App() {
                   className="cta-btn1"
                   target="_blank"
                   rel="noopener noreferrer"
-                >PARTICIPATE</a>
+                >
+                  PARTICIPATE
+                </a>
                 <div className="cta-subtext1">Google Form</div>
               </div>
               <div className="cta-with-text">
@@ -586,11 +713,12 @@ function App() {
                   className="cta-btn2"
                   target="_blank"
                   rel="noopener noreferrer"
-                >JOIN</a>
+                >
+                  JOIN
+                </a>
                 <div className="cta-subtext2">WhatsApp community</div>
               </div>
             </div>
-
           </div>
 
           <div className="blog-card">
@@ -627,7 +755,9 @@ function App() {
                   className="cta-btn1"
                   target="_blank"
                   rel="noopener noreferrer"
-                >PARTICIPATE</a>
+                >
+                  PARTICIPATE
+                </a>
                 <div className="cta-subtext1">Google Form</div>
               </div>
               <div className="cta-with-text">
@@ -636,11 +766,12 @@ function App() {
                   className="cta-btn2"
                   target="_blank"
                   rel="noopener noreferrer"
-                >JOIN</a>
+                >
+                  JOIN
+                </a>
                 <div className="cta-subtext2">WhatsApp community</div>
               </div>
             </div>
-
           </div>
 
           <div className="blog-card">
@@ -682,7 +813,9 @@ function App() {
                   className="cta-btn1"
                   target="_blank"
                   rel="noopener noreferrer"
-                >PARTICIPATE</a>
+                >
+                  PARTICIPATE
+                </a>
                 <div className="cta-subtext1">Google Form</div>
               </div>
               <div className="cta-with-text">
@@ -691,12 +824,12 @@ function App() {
                   className="cta-btn2"
                   target="_blank"
                   rel="noopener noreferrer"
-                >JOIN</a>
+                >
+                  JOIN
+                </a>
                 <div className="cta-subtext2">WhatsApp community</div>
               </div>
             </div>
-
-
           </div>
 
           <div className="blog-card">
@@ -734,7 +867,9 @@ function App() {
                   className="cta-btn1"
                   target="_blank"
                   rel="noopener noreferrer"
-                >PARTICIPATE</a>
+                >
+                  PARTICIPATE
+                </a>
                 <div className="cta-subtext1">Google Form</div>
               </div>
               <div className="cta-with-text">
@@ -743,12 +878,12 @@ function App() {
                   className="cta-btn2"
                   target="_blank"
                   rel="noopener noreferrer"
-                >JOIN</a>
+                >
+                  JOIN
+                </a>
                 <div className="cta-subtext2">WhatsApp community</div>
               </div>
             </div>
-
-
           </div>
         </div>
       </section>
@@ -775,29 +910,54 @@ function App() {
       <div className="terms">
         <h3>Terms and Condition</h3>
         <h5>
-         - By accessing this website and making a donation to VIHANTA FOUNDATION, donors agree to the following terms: <br />
-         - All donations are voluntary and will be used for the charitable objectives and projects of VIHANTA FOUNDATION. <br />
-         - Donors confirm that all funds offered are from lawful sources and that the donations are non-refundable. <br />
-         - Tax exemption is available only if VIHANTA FOUNDATION holds the necessary government certification; donors must provide correct details for receipts and benefits. <br />
-         - VIHANTA FOUNDATION pledges that all funds will be utilized in line with its mission and will not be used for unlawful purposes. <br />
-         - Donors may receive donation receipts or acknowledgment, but no goods or services of commercial value are provided in return. <br />
-         - The foundation reserves the right to update or amend these terms. Continued use of the donation facilities constitutes acceptance of any changes. <br />
-         - Any dispute arising from donations shall be subject to the jurisdiction of Mumbai.</h5>
+          - By accessing this website and making a donation to VIHANTA
+          FOUNDATION, donors agree to the following terms: <br />
+          - All donations are voluntary and will be used for the charitable
+          objectives and projects of VIHANTA FOUNDATION. <br />
+          - Donors confirm that all funds offered are from lawful sources and
+          that the donations are non-refundable. <br />
+          - Tax exemption is available only if VIHANTA FOUNDATION holds the
+          necessary government certification; donors must provide correct
+          details for receipts and benefits. <br />
+          - VIHANTA FOUNDATION pledges that all funds will be utilized in line
+          with its mission and will not be used for unlawful purposes. <br />
+          - Donors may receive donation receipts or acknowledgment, but no goods
+          or services of commercial value are provided in return. <br />
+          - The foundation reserves the right to update or amend these terms.
+          Continued use of the donation facilities constitutes acceptance of any
+          changes. <br />- Any dispute arising from donations shall be subject
+          to the jurisdiction of Mumbai.
+        </h5>
         <br />
         <h3 className="pvc">Privacy Policy </h3>
         <h5>
-          - VIHANTA FOUNDATION values the privacy of its donors and website visitors. This notice describes our personal data handling practices: <br />
-          - Information such as donor name, contact information, and transaction details is collected only for processing donations, recordkeeping, and issuing receipts. <br />
-          - Personal data is not shared or sold to third parties except as required for legal compliance, auditing, or enabling payment gateways. <br />
-          - Payment-related data is secured and processed via certified payment gateways; VIHANTA FOUNDATION does not store card or sensitive banking details. <br />
-          - Donors can request updates or corrections to their information at any time by contacting Email: vihantafoundation@gmail.com <br />
-          - Website cookies and analytics tools may be used for site monitoring and improvement; no sensitive personal data is collected through these means. <br />
-          - The foundation does not knowingly collect information from children or minors. <br />
-          - This policy may be updated; updated versions will be posted on this page.</h5>
+          - VIHANTA FOUNDATION values the privacy of its donors and website
+          visitors. This notice describes our personal data handling practices:{" "}
+          <br />
+          - Information such as donor name, contact information, and transaction
+          details is collected only for processing donations, recordkeeping, and
+          issuing receipts. <br />
+          - Personal data is not shared or sold to third parties except as
+          required for legal compliance, auditing, or enabling payment gateways.{" "}
+          <br />
+          - Payment-related data is secured and processed via certified payment
+          gateways; VIHANTA FOUNDATION does not store card or sensitive banking
+          details. <br />
+          - Donors can request updates or corrections to their information at
+          any time by contacting Email: vihantafoundation@gmail.com <br />
+          - Website cookies and analytics tools may be used for site monitoring
+          and improvement; no sensitive personal data is collected through these
+          means. <br />
+          - The foundation does not knowingly collect information from children
+          or minors. <br />- This policy may be updated; updated versions will
+          be posted on this page.
+        </h5>
         <br />
         <h3>Return and refund policy</h3>
-        <h4 className="rfp">We do not have any return and refund policy as we are functioning as not for profit.</h4>
-
+        <h4 className="rfp">
+          We do not have any return and refund policy as we are functioning as
+          not for profit.
+        </h4>
       </div>
 
       {/* Footer */}
